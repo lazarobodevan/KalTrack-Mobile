@@ -1,0 +1,15 @@
+C:\Projs\KalTrack\KalTrack\KalTrack\bin\Debug\netstandard2.0\KalTrack.deps.json
+C:\Projs\KalTrack\KalTrack\KalTrack\bin\Debug\netstandard2.0\KalTrack.dll
+C:\Projs\KalTrack\KalTrack\KalTrack\bin\Debug\netstandard2.0\ref\KalTrack.dll
+C:\Projs\KalTrack\KalTrack\KalTrack\bin\Debug\netstandard2.0\KalTrack.pdb
+C:\Projs\KalTrack\KalTrack\KalTrack\obj\Debug\netstandard2.0\KalTrack.csproj.AssemblyReference.cache
+C:\Projs\KalTrack\KalTrack\KalTrack\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Projs\KalTrack\KalTrack\KalTrack\obj\Debug\netstandard2.0\MainPage.xaml.g.cs
+C:\Projs\KalTrack\KalTrack\KalTrack\obj\Debug\netstandard2.0\View\HomePage.xaml.g.cs
+C:\Projs\KalTrack\KalTrack\KalTrack\obj\Debug\netstandard2.0\KalTrack.AssemblyInfoInputs.cache
+C:\Projs\KalTrack\KalTrack\KalTrack\obj\Debug\netstandard2.0\KalTrack.AssemblyInfo.cs
+C:\Projs\KalTrack\KalTrack\KalTrack\obj\Debug\netstandard2.0\KalTrack.csproj.CoreCompileInputs.cache
+C:\Projs\KalTrack\KalTrack\KalTrack\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Projs\KalTrack\KalTrack\KalTrack\obj\Debug\netstandard2.0\KalTrack.dll
+C:\Projs\KalTrack\KalTrack\KalTrack\obj\Debug\netstandard2.0\ref\KalTrack.dll
+C:\Projs\KalTrack\KalTrack\KalTrack\obj\Debug\netstandard2.0\KalTrack.pdb
