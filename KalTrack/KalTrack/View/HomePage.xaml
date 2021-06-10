@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
+             xmlns:viewmodels="clr-namespace:KalTrack.ViewModel"
+             x:Class="KalTrack.View.HomePage"
+             x:DataType="viewmodels:HomePageVM"
+             BackgroundColor="White">
+    <ContentPage.BindingContext>
+        <viewmodels:HomePageVM/>
+    </ContentPage.BindingContext>
+    <ContentPage.Content>
+       
+            <!-- Place new controls here -->
+        <StackLayout>
+            <StackLayout BackgroundColor="#27CA85" HeightRequest="89" >
+                <Grid HeightRequest="809">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="89" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="20*"/>
+                        <ColumnDefinition Width="160"/>
+                        <ColumnDefinition Width="20*" />
+                    </Grid.ColumnDefinitions>
+
+                    <!-- Botoes de navegacao superior -->
+
+                    <Button x:Name="Back" 
+                            HorizontalOptions="End"
+                            VerticalOptions="Center"
+                            Padding="2, 9, 0, 9"
+                            BorderColor="White"
+                            HeightRequest="30"
+                            WidthRequest="30"
+                            CornerRadius="20"
+                            ImageSource="arrow.png"
+                            Rotation="180"     
+                            BorderWidth="2"
+                            Command="{Binding NavBack}"
+                            ClassId="back"
+                            Grid.Column="0"
+                            Grid.Row="0"
+                            BackgroundColor="#27CA85"/>
+
+                    <Button x:Name="Fourth" 
+                            HorizontalOptions="Start"
+                            VerticalOptions="CenterAndExpand"
+                            
+                            Padding="2, 9, 0, 9"
+                            BorderColor="White"
+                            HeightRequest="30"
+                            WidthRequest="30"
+                            CornerRadius="20"
+                            ImageSource="arrow.png"
+                            BorderWidth="2"
+                            Command="{Binding NavFourth}"
+                            ClassId="fourth"
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            BackgroundColor="#27CA85"/>
+
+
+                    <!-- Label de Mes Atual -->
+
+                    <StackLayout HeightRequest="60" 
+                             WidthRequest="40"
+                                 Grid.Column="1"
+                                 Grid.Row="0"
+                                 VerticalOptions="End">
+
+                        <Frame CornerRadius="15"
+                            Padding="17"
+                            BackgroundColor="White"
+                            HasShadow="False">
+
+                            <Label Text="{Binding MonthText}"
+                               HorizontalOptions="CenterAndExpand"
+                               VerticalOptions="CenterAndExpand"
+                               FontFamily="Quicksand-Regular.ttf#"
+                               TextColor="Black"
+                               FontSize="20"/>
+                        </Frame>
+
+                    </StackLayout>
+                </Grid>
+            </StackLayout>
+            
+        </StackLayout>
+
+
+    </ContentPage.Content>
+</ContentPage>
