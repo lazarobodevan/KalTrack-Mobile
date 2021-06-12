@@ -8,18 +8,19 @@
     <ContentPage.BindingContext>
         <viewmodels:HomePageVM/>
     </ContentPage.BindingContext>
+    
     <ContentPage.Content>
        
             <!-- Place new controls here -->
         <StackLayout>
-            <StackLayout BackgroundColor="#27CA85" HeightRequest="89" >
-                <Grid HeightRequest="809">
+            <StackLayout BackgroundColor="#27CA85" HeightRequest="89"  >
+                <Grid HeightRequest="89">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="89" />
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="20*"/>
-                        <ColumnDefinition Width="160"/>
+                        <ColumnDefinition Width="170"/>
                         <ColumnDefinition Width="20*" />
                     </Grid.ColumnDefinitions>
 
@@ -30,8 +31,8 @@
                             VerticalOptions="Center"
                             Padding="2, 9, 0, 9"
                             BorderColor="White"
-                            HeightRequest="30"
-                            WidthRequest="30"
+                            HeightRequest="40"
+                            WidthRequest="40"
                             CornerRadius="20"
                             ImageSource="arrow.png"
                             Rotation="180"     
@@ -48,8 +49,8 @@
                             
                             Padding="2, 9, 0, 9"
                             BorderColor="White"
-                            HeightRequest="30"
-                            WidthRequest="30"
+                            HeightRequest="40"
+                            WidthRequest="40"
                             CornerRadius="20"
                             ImageSource="arrow.png"
                             BorderWidth="2"
@@ -84,7 +85,74 @@
                     </StackLayout>
                 </Grid>
             </StackLayout>
+
+
+
+            <Label Text="{Binding lblTxt}" HorizontalOptions="Center" VerticalOptions="EndAndExpand"/>
+
+
+
+
+            <!--Bottom Navigation-->
+            <StackLayout BackgroundColor="#27CA85" HeightRequest="89" VerticalOptions="EndAndExpand">
+                <Grid HeightRequest="89">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="90"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+
+                    <Button HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            HeightRequest="70"
+                            Grid.Row="0"
+                            Grid.Column="0"
+                            ImageSource="Home.png"
+                            BackgroundColor="#27CA85"
+                            Command="{Binding NavHome}"/>
+
+                    <Polyline Points="45,0 48,5 50,10 50,75 49,79 42,89" StrokeLineJoin="Round" StrokeThickness="3" Stroke="white" HorizontalOptions="End" Grid.Column="0"/>
+                   
+                    <Button HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            HeightRequest="70"
+                            Grid.Row="0"
+                            Grid.Column="1"
+                            BackgroundColor="#27CA85"
+                            ImageSource="Chart.png"
+                            Command="{Binding NavChart}"/>
+                    <Polyline Points="45,0 48,5 50,10 50,75 49,79 42,89" StrokeLineJoin="Round" StrokeThickness="3" Stroke="white" HorizontalOptions="End" Grid.Column="1"/>
+
+                    <Button HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            HeightRequest="70"
+                            Grid.Row="0"
+                            Grid.Column="2"
+                            BackgroundColor="#27CA85"
+                            ImageSource="Calendar.png"
+                            Command="{Binding NavCalendar}"/>
+                    <Polyline Points="45,0 48,5 50,10 50,75 49,79 42,89" StrokeLineJoin="Round" StrokeThickness="3" Stroke="white" HorizontalOptions="End" Grid.Column="2"/>
+
+                    <Button HorizontalOptions="Center"
+                            VerticalOptions="Center"
+                            HeightRequest="70"
+                            Grid.Row="0"
+                            Grid.Column="3"
+                            BackgroundColor="#27CA85"
+                            ImageSource="Options.png"
+                            Command="{Binding NavOptions}"/>
+                    <Polyline Points="45,0 48,5 50,10 50,75 49,79 42,89" StrokeLineJoin="Round" StrokeThickness="3" Stroke="white" HorizontalOptions="End" Grid.Column="3"/>
+
+                </Grid>
+            </StackLayout>
+
             
+
+
         </StackLayout>
 
 
