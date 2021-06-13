@@ -1,5 +1,7 @@
-﻿using System;
+﻿using KalTrack.Model;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows.Input;
 using Xamarin.Forms;
@@ -13,6 +15,7 @@ namespace KalTrack.ViewModel {
             NavChart = new Command(Nav_Chart);
             NavCalendar = new Command(Nav_Calendar);
             NavOptions = new Command(Nav_Options);
+            GetListOfFood();
         }
         public ICommand NavBack { get; }
         public ICommand NavFourth { get; }
@@ -20,6 +23,7 @@ namespace KalTrack.ViewModel {
         public ICommand NavChart { get; }
         public ICommand NavCalendar { get; }
         public ICommand NavOptions { get; }
+        public List<Food> Foods { get; private set; }
 
         string monthText = DateTime.UtcNow.ToString("dd/MMMM");
 
@@ -61,6 +65,15 @@ namespace KalTrack.ViewModel {
         }
         void Nav_Options() {
             lblTxt = "Options";
+        }
+
+
+        public void GetListOfFood() {
+            Foods = new List<Food>();
+            Foods.Add(new Food { Id = 1, Calories = 30, MealType = MealType.Breakfast.value});
+            Foods.Add(new Food { Id = 1, Calories = 30, MealType = MealType.Breakfast.value });
+            Foods.Add(new Food { Id = 1, Calories = 30, MealType = MealType.Breakfast.value });
+            Foods.Add(new Food { Id = 1, Calories = 30, MealType = MealType.Breakfast.value });
         }
     }
 }

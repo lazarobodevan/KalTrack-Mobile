@@ -1,10 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
-             xmlns:viewmodels="clr-namespace:KalTrack.ViewModel"
+             xmlns:viewmodels="clr-namespace:KalTrack.ViewModel" 
+             xmlns:model="clr-namespace:KalTrack.Model"
              x:Class="KalTrack.View.HomePage"
              x:DataType="viewmodels:HomePageVM"
-             BackgroundColor="White">
+             BackgroundColor="White"
+             NavigationPage.HasNavigationBar="false">
     <ContentPage.BindingContext>
         <viewmodels:HomePageVM/>
     </ContentPage.BindingContext>
@@ -87,6 +89,30 @@
             </StackLayout>
 
 
+            <AbsoluteLayout BackgroundColor="Blue">
+                <CollectionView x:Name="cvMeal" ItemsSource="{Binding Foods}" Margin="20,10" >
+                    <CollectionView.ItemTemplate >
+                        <DataTemplate x:DataType="model:Food">
+                            <Grid Padding="8">
+                                <Frame BackgroundColor="Black">
+                                    <StackLayout Orientation="Vertical" BackgroundColor="AliceBlue" Padding="20,20">
+                                        <Button HorizontalOptions="End"/>
+                                        <Label Text="{Binding Id}"/>
+                                        <Label Text="{Binding Calories}"/>
+                                        <Label Text="{Binding MealType}"/>
+                                    </StackLayout>
+                                </Frame>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <AbsoluteLayout HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand">
+                    <Button ImageSource="AddButton.svg" HeightRequest="80" WidthRequest="60" Margin="25,0"  CornerRadius="30" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand"/>
+                </AbsoluteLayout> 
+            </AbsoluteLayout>
+            
+
+            
 
             <Label Text="{Binding lblTxt}" HorizontalOptions="Center" VerticalOptions="EndAndExpand"/>
 
@@ -116,7 +142,7 @@
                             Command="{Binding NavHome}"/>
 
                     <Polyline Points="45,0 48,5 50,10 50,75 49,79 42,89" StrokeLineJoin="Round" StrokeThickness="3" Stroke="white" HorizontalOptions="End" Grid.Column="0"/>
-                   
+
                     <Button HorizontalOptions="Center"
                             VerticalOptions="Center"
                             HeightRequest="70"
@@ -149,9 +175,6 @@
 
                 </Grid>
             </StackLayout>
-
-            
-
 
         </StackLayout>
 

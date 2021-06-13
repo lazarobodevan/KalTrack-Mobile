@@ -8,7 +8,8 @@ namespace KalTrack {
         public App() {
             InitializeComponent();
 
-            MainPage = new HomePage();
+            MainPage = new NavigationPage(new HomePage());
+            SetValue(NavigationPage.HasNavigationBarProperty, false);
         }
 
         protected override void OnStart() {
