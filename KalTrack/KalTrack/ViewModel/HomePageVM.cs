@@ -25,7 +25,7 @@ namespace KalTrack.ViewModel {
         public ICommand NavOptions { get; }
         public List<Food> Foods { get; private set; }
 
-        string monthText = DateTime.UtcNow.ToString("dd/MMMM");
+        string monthText = DateTime.UtcNow.ToString("MMMM/yyyy");
 
         public string MonthText {
             get => monthText;
@@ -47,11 +47,11 @@ namespace KalTrack.ViewModel {
         }
 
         void Nav_Back() {
-            MonthText = DateTime.Parse(MonthText).AddMonths(-1).ToString("dd/MMMM");
+            MonthText = DateTime.Parse(MonthText).AddMonths(-1).ToString("MMMM/yyyy");
         }
 
         void Nav_Fourth() {
-            MonthText = DateTime.Parse(MonthText).AddMonths(1).ToString("dd/MMMM");
+            MonthText = DateTime.Parse(MonthText).AddMonths(1).ToString("MMMM/yyyy");
         }
 
         void Nav_Home() {
@@ -68,12 +68,14 @@ namespace KalTrack.ViewModel {
         }
 
 
-        public void GetListOfFood() {
+        public List<Food> GetListOfFood() {
             Foods = new List<Food>();
             Foods.Add(new Food { Id = 1, Calories = 30, MealType = MealType.Breakfast.value});
             Foods.Add(new Food { Id = 1, Calories = 30, MealType = MealType.Breakfast.value });
             Foods.Add(new Food { Id = 1, Calories = 30, MealType = MealType.Breakfast.value });
             Foods.Add(new Food { Id = 1, Calories = 30, MealType = MealType.Breakfast.value });
+
+            return Foods;
         }
     }
 }

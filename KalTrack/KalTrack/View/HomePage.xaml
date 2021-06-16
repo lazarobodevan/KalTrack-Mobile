@@ -81,7 +81,7 @@
                                VerticalOptions="CenterAndExpand"
                                FontFamily="Quicksand-Regular.ttf#"
                                TextColor="Black"
-                               FontSize="20"/>
+                               FontSize="18"/>
                         </Frame>
 
                     </StackLayout>
@@ -89,41 +89,87 @@
             </StackLayout>
 
 
-            <AbsoluteLayout BackgroundColor="Blue">
-                <CollectionView x:Name="cvMeal" ItemsSource="{Binding Foods}" Margin="20,10" >
+            <AbsoluteLayout Margin="0,-6,0,-6">
+                <CollectionView x:Name="cvMeal" ItemsSource="{Binding Foods}" Margin="20,0">
                     <CollectionView.ItemTemplate >
                         <DataTemplate x:DataType="model:Food">
                             <Grid Padding="8">
-                                <Frame BackgroundColor="Black">
-                                    <StackLayout Orientation="Vertical" BackgroundColor="AliceBlue" Padding="20,20">
-                                        <Button HorizontalOptions="End"/>
-                                        <Label Text="{Binding Id}"/>
-                                        <Label Text="{Binding Calories}"/>
-                                        <Label Text="{Binding MealType}"/>
+                                <Frame BackgroundColor="AliceBlue" CornerRadius="30">
+                                    <StackLayout Orientation="Vertical" BackgroundColor="AliceBlue" Padding="0,10">
+                                        <Grid >
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="1*" ></RowDefinition>
+                                                <RowDefinition Height="1*"></RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                <ColumnDefinition Width="2*"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Image Source="CalendarDay.png" Grid.Row="0" Grid.Column="0" HorizontalOptions="Start" VerticalOptions="Center" Grid.RowSpan="2" WidthRequest="74"/>
+                                            <Label Text="{Binding Date}" Grid.Row="0" Grid.Column="1" Margin="0,20,0,0" FontFamily="Quicksand.ttf#" HorizontalTextAlignment="Start" FontSize="18" TextColor="Black" FontAttributes="Bold"/>
+                                            <Label Text="{Binding MealType}" Grid.Row="1" Grid.Column="1" Margin="0,10,0,0" TextColor="Black" FontFamily="Quicksand.ttf#"/>
+                                            <Button HorizontalOptions="End"  Grid.Row="0" Grid.Column="4" VerticalOptions="Center" WidthRequest="60" HeightRequest="35" Text="..." BackgroundColor="#E8EEEF" CornerRadius="10"/>
+                                        </Grid>
+
+                                        <Grid Margin="0,15,0,0">
+                                            <Grid.RowDefinitions>
+                                                <RowDefinition Height="Auto" ></RowDefinition>
+                                                <RowDefinition Height="*"></RowDefinition>
+                                            </Grid.RowDefinitions>
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                                <ColumnDefinition Width="*"></ColumnDefinition>
+                                                <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                            </Grid.ColumnDefinitions>
+
+                                            <Image Source="fire.png" Grid.Row="0" Grid.Column="0" WidthRequest="40" VerticalOptions="End" HorizontalOptions="End"/>
+                                            <Label Text="{Binding Calories, StringFormat='{0} cal.'}" Grid.Row="0" Grid.Column="1" HorizontalOptions="Start" VerticalOptions="Center"/>
+
+                                            <Image Source="exercise.png" Grid.Row="0" Grid.Column="2" WidthRequest="40" VerticalOptions="End" HorizontalOptions="End" Margin="0,0,0,0"/>
+                                            <Grid Grid.Row="0" Grid.Column="3" HorizontalOptions="End" Margin="0,0,-15,0">
+                                                <Grid.RowDefinitions>
+                                                    <RowDefinition Height="Auto"></RowDefinition>
+                                                    <RowDefinition Height="Auto"></RowDefinition>
+                                                </Grid.RowDefinitions>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                                </Grid.ColumnDefinitions>
+
+                                                <Label Text="30 min" Grid.Column="0" Grid.Row="0"/>
+                                                <Label Text="500 cal." Grid.Column="0" Grid.Row="1"/>
+                                            </Grid>
+
+                                            <Label Text="1.8L" Grid.Row="0" Grid.Column="4" HorizontalOptions="End" VerticalOptions="Center"/>
+                                            <Image Source="waterglass.png" Grid.Row="0" Grid.Column="5" WidthRequest="40" VerticalOptions="End" HorizontalOptions="Start" />
+
+                                        </Grid>
                                     </StackLayout>
                                 </Frame>
                             </Grid>
+
                         </DataTemplate>
                     </CollectionView.ItemTemplate>
                 </CollectionView>
-                <AbsoluteLayout HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand">
-                    <Button ImageSource="AddButton.svg" HeightRequest="80" WidthRequest="60" Margin="25,0"  CornerRadius="30" HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand"/>
-                </AbsoluteLayout> 
+
+                <AbsoluteLayout VerticalOptions="FillAndExpand" AbsoluteLayout.LayoutBounds="0.85,1,20,60" AbsoluteLayout.LayoutFlags="XProportional,YProportional">
+                    <Button ImageSource="AddButton.svg" HeightRequest="60" WidthRequest="60" CornerRadius="30" />
+                </AbsoluteLayout>
+                
             </AbsoluteLayout>
             
 
-            
-
-            <Label Text="{Binding lblTxt}" HorizontalOptions="Center" VerticalOptions="EndAndExpand"/>
-
-
-
-
+         
             <!--Bottom Navigation-->
-            <StackLayout BackgroundColor="#27CA85" HeightRequest="89" VerticalOptions="EndAndExpand">
-                <Grid HeightRequest="89">
+            <StackLayout BackgroundColor="#27CA85" HeightRequest="69" VerticalOptions="EndAndExpand">
+                <Grid>
                     <Grid.RowDefinitions>
-                        <RowDefinition Height="90"></RowDefinition>
+                        <RowDefinition Height="69"></RowDefinition>
                     </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="2*"></ColumnDefinition>
@@ -139,7 +185,8 @@
                             Grid.Column="0"
                             ImageSource="Home.png"
                             BackgroundColor="#27CA85"
-                            Command="{Binding NavHome}"/>
+                            Command="{Binding NavHome}"
+                            CornerRadius="40"/>
 
                     <Polyline Points="45,0 48,5 50,10 50,75 49,79 42,89" StrokeLineJoin="Round" StrokeThickness="3" Stroke="white" HorizontalOptions="End" Grid.Column="0"/>
 
@@ -150,7 +197,8 @@
                             Grid.Column="1"
                             BackgroundColor="#27CA85"
                             ImageSource="Chart.png"
-                            Command="{Binding NavChart}"/>
+                            Command="{Binding NavChart}"
+                            CornerRadius="40"/>
                     <Polyline Points="45,0 48,5 50,10 50,75 49,79 42,89" StrokeLineJoin="Round" StrokeThickness="3" Stroke="white" HorizontalOptions="End" Grid.Column="1"/>
 
                     <Button HorizontalOptions="Center"
@@ -160,7 +208,8 @@
                             Grid.Column="2"
                             BackgroundColor="#27CA85"
                             ImageSource="Calendar.png"
-                            Command="{Binding NavCalendar}"/>
+                            Command="{Binding NavCalendar}"
+                            CornerRadius="40"/>
                     <Polyline Points="45,0 48,5 50,10 50,75 49,79 42,89" StrokeLineJoin="Round" StrokeThickness="3" Stroke="white" HorizontalOptions="End" Grid.Column="2"/>
 
                     <Button HorizontalOptions="Center"
@@ -170,7 +219,8 @@
                             Grid.Column="3"
                             BackgroundColor="#27CA85"
                             ImageSource="Options.png"
-                            Command="{Binding NavOptions}"/>
+                            Command="{Binding NavOptions}"
+                            CornerRadius="40"/>
                     <Polyline Points="45,0 48,5 50,10 50,75 49,79 42,89" StrokeLineJoin="Round" StrokeThickness="3" Stroke="white" HorizontalOptions="End" Grid.Column="3"/>
 
                 </Grid>
