@@ -3,10 +3,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" 
              xmlns:viewmodels="clr-namespace:KalTrack.ViewModel" 
              xmlns:model="clr-namespace:KalTrack.Model"
+             xmlns:fab="clr-namespace:Refractored.FabControl;assembly=Refractored.FabControl"
              x:Class="KalTrack.View.HomePage"
              x:DataType="viewmodels:HomePageVM"
              BackgroundColor="White"
-             NavigationPage.HasNavigationBar="false">
+             IconImageSource="home.svg"
+             Title="Home">
     <ContentPage.BindingContext>
         <viewmodels:HomePageVM/>
     </ContentPage.BindingContext>
@@ -89,7 +91,7 @@
             </StackLayout>
 
 
-            <AbsoluteLayout Margin="0,-6,0,-6">
+            <AbsoluteLayout>
                 <CollectionView x:Name="cvMeal" ItemsSource="{Binding Foods}" Margin="20,0">
                     <CollectionView.ItemTemplate >
                         <DataTemplate x:DataType="model:Food">
@@ -157,77 +159,89 @@
                     </CollectionView.ItemTemplate>
                 </CollectionView>
 
-                <AbsoluteLayout VerticalOptions="FillAndExpand" AbsoluteLayout.LayoutBounds="0.85,1,20,60" AbsoluteLayout.LayoutFlags="XProportional,YProportional">
-                    <Button ImageSource="AddButton.svg" HeightRequest="60" WidthRequest="60" CornerRadius="30" />
+
+                <AbsoluteLayout AbsoluteLayout.LayoutFlags="PositionProportional"
+				        AbsoluteLayout.LayoutBounds="1, 1, -1, -1">
+                    <Grid  Margin="0,0,10,10">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"></RowDefinition>
+                        </Grid.RowDefinitions>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"></ColumnDefinition>
+                        </Grid.ColumnDefinitions>
+
+
+                        <StackLayout 
+                            Grid.Column="0"
+                            Grid.Row="0"
+                            Orientation="Horizontal"
+                            IsVisible="{Binding IsOpen}"
+                            BackgroundColor="Aqua"
+                        >
+
+                            <Label Text="Menu" VerticalOptions="Center" HorizontalTextAlignment="End" WidthRequest="60" FontSize="Medium"></Label>
+                            <fab:FloatingActionButtonView
+				                ImageName="outline_add_white_24dp.png"
+				                ColorNormal="Green"
+				                ColorPressed="Green"
+				                x:Name="FloatingActionButtonAdd0"
+				                IsVisible="{Binding Visibility}"
+				                AbsoluteLayout.LayoutFlags="PositionProportional"
+				                AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize"
+                            />
+                            
+                        </StackLayout>
+
+                        <StackLayout 
+                            Grid.Column="0"
+                            Grid.Row="1"
+                            Orientation="Horizontal"
+                            IsVisible="{Binding IsOpen}"
+                            BackgroundColor="Aqua"
+                            
+                        >
+
+                            <Label Text="Menu" VerticalOptions="Center" HorizontalTextAlignment="End" WidthRequest="60" FontSize="Medium"></Label>
+                            <fab:FloatingActionButtonView
+				                ImageName="outline_add_white_24dp.png"
+				                ColorNormal="Green"
+				                ColorPressed="Green"
+				                x:Name="FloatingActionButtonAdd1"
+                                IsVisible="True"
+				                Command="{Binding Visibility}"
+				                AbsoluteLayout.LayoutFlags="PositionProportional"
+				                AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize"
+                            />
+
+                        </StackLayout>
+
+                        <StackLayout 
+                            Grid.Column="0"
+                            Grid.Row="2"
+                            Orientation="Vertical"
+                            IsVisible="True"
+                            HorizontalOptions="EndAndExpand"
+                        >
+
+                            <fab:FloatingActionButtonView
+				                ImageName="outline_add_white_24dp.png"
+				                ColorNormal="Green"
+				                ColorPressed="Green"
+				                x:Name="FloatingActionButtonAdd2"
+				                IsVisible="True"
+                                Command="{Binding Visibility}"
+				                AbsoluteLayout.LayoutFlags="PositionProportional"
+				                AbsoluteLayout.LayoutBounds="1, 1, AutoSize, AutoSize"
+                            />
+
+                        </StackLayout>
+
+                    </Grid>
                 </AbsoluteLayout>
-                
+
             </AbsoluteLayout>
             
-
-         
-            <!--Bottom Navigation-->
-            <StackLayout BackgroundColor="#27CA85" HeightRequest="69" VerticalOptions="EndAndExpand">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="69"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <Grid.ColumnDefinitions>
-                        <ColumnDefinition Width="2*"></ColumnDefinition>
-                        <ColumnDefinition Width="2*"></ColumnDefinition>
-                        <ColumnDefinition Width="2*"></ColumnDefinition>
-                        <ColumnDefinition Width="2*"></ColumnDefinition>
-                    </Grid.ColumnDefinitions>
-
-                    <Button HorizontalOptions="Center"
-                            VerticalOptions="Center"
-                            HeightRequest="70"
-                            Grid.Row="0"
-                            Grid.Column="0"
-                            ImageSource="Home.png"
-                            BackgroundColor="#27CA85"
-                            Command="{Binding NavHome}"
-                            CornerRadius="40"/>
-
-                    <Polyline Points="45,0 48,5 50,10 50,75 49,79 42,89" StrokeLineJoin="Round" StrokeThickness="3" Stroke="white" HorizontalOptions="End" Grid.Column="0"/>
-
-                    <Button HorizontalOptions="Center"
-                            VerticalOptions="Center"
-                            HeightRequest="70"
-                            Grid.Row="0"
-                            Grid.Column="1"
-                            BackgroundColor="#27CA85"
-                            ImageSource="Chart.png"
-                            Command="{Binding NavChart}"
-                            CornerRadius="40"/>
-                    <Polyline Points="45,0 48,5 50,10 50,75 49,79 42,89" StrokeLineJoin="Round" StrokeThickness="3" Stroke="white" HorizontalOptions="End" Grid.Column="1"/>
-
-                    <Button HorizontalOptions="Center"
-                            VerticalOptions="Center"
-                            HeightRequest="70"
-                            Grid.Row="0"
-                            Grid.Column="2"
-                            BackgroundColor="#27CA85"
-                            ImageSource="Calendar.png"
-                            Command="{Binding NavCalendar}"
-                            CornerRadius="40"/>
-                    <Polyline Points="45,0 48,5 50,10 50,75 49,79 42,89" StrokeLineJoin="Round" StrokeThickness="3" Stroke="white" HorizontalOptions="End" Grid.Column="2"/>
-
-                    <Button HorizontalOptions="Center"
-                            VerticalOptions="Center"
-                            HeightRequest="70"
-                            Grid.Row="0"
-                            Grid.Column="3"
-                            BackgroundColor="#27CA85"
-                            ImageSource="Options.png"
-                            Command="{Binding NavOptions}"
-                            CornerRadius="40"/>
-                    <Polyline Points="45,0 48,5 50,10 50,75 49,79 42,89" StrokeLineJoin="Round" StrokeThickness="3" Stroke="white" HorizontalOptions="End" Grid.Column="3"/>
-
-                </Grid>
-            </StackLayout>
-
         </StackLayout>
-
 
     </ContentPage.Content>
 </ContentPage>

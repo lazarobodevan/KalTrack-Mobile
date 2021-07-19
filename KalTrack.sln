@@ -5,9 +5,7 @@ VisualStudioVersion = 16.0.31321.278
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KalTrack.Android", "KalTrack\KalTrack.Android\KalTrack.Android.csproj", "{E7A630B8-3A17-4339-9104-1ED331FE3853}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KalTrack.iOS", "KalTrack\KalTrack.iOS\KalTrack.iOS.csproj", "{FC53E3D8-B918-4682-AF57-0B3BE9BC7B06}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KalTrack", "KalTrack\KalTrack\KalTrack.csproj", "{796063F1-D05F-4143-B5AE-07DA3774A97A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "KalTrack", "KalTrack\KalTrack\KalTrack.csproj", "{796063F1-D05F-4143-B5AE-07DA3774A97A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,24 +35,6 @@ Global
 		{E7A630B8-3A17-4339-9104-1ED331FE3853}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{E7A630B8-3A17-4339-9104-1ED331FE3853}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
 		{E7A630B8-3A17-4339-9104-1ED331FE3853}.Release|iPhoneSimulator.Deploy.0 = Release|Any CPU
-		{FC53E3D8-B918-4682-AF57-0B3BE9BC7B06}.Debug|Any CPU.ActiveCfg = Debug|iPhone
-		{FC53E3D8-B918-4682-AF57-0B3BE9BC7B06}.Debug|Any CPU.Build.0 = Debug|iPhone
-		{FC53E3D8-B918-4682-AF57-0B3BE9BC7B06}.Debug|Any CPU.Deploy.0 = Debug|iPhone
-		{FC53E3D8-B918-4682-AF57-0B3BE9BC7B06}.Debug|iPhone.ActiveCfg = Debug|iPhone
-		{FC53E3D8-B918-4682-AF57-0B3BE9BC7B06}.Debug|iPhone.Build.0 = Debug|iPhone
-		{FC53E3D8-B918-4682-AF57-0B3BE9BC7B06}.Debug|iPhone.Deploy.0 = Debug|iPhone
-		{FC53E3D8-B918-4682-AF57-0B3BE9BC7B06}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
-		{FC53E3D8-B918-4682-AF57-0B3BE9BC7B06}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
-		{FC53E3D8-B918-4682-AF57-0B3BE9BC7B06}.Debug|iPhoneSimulator.Deploy.0 = Debug|iPhoneSimulator
-		{FC53E3D8-B918-4682-AF57-0B3BE9BC7B06}.Release|Any CPU.ActiveCfg = Release|iPhoneSimulator
-		{FC53E3D8-B918-4682-AF57-0B3BE9BC7B06}.Release|Any CPU.Build.0 = Release|iPhoneSimulator
-		{FC53E3D8-B918-4682-AF57-0B3BE9BC7B06}.Release|Any CPU.Deploy.0 = Release|iPhoneSimulator
-		{FC53E3D8-B918-4682-AF57-0B3BE9BC7B06}.Release|iPhone.ActiveCfg = Release|iPhone
-		{FC53E3D8-B918-4682-AF57-0B3BE9BC7B06}.Release|iPhone.Build.0 = Release|iPhone
-		{FC53E3D8-B918-4682-AF57-0B3BE9BC7B06}.Release|iPhone.Deploy.0 = Release|iPhone
-		{FC53E3D8-B918-4682-AF57-0B3BE9BC7B06}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
-		{FC53E3D8-B918-4682-AF57-0B3BE9BC7B06}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
-		{FC53E3D8-B918-4682-AF57-0B3BE9BC7B06}.Release|iPhoneSimulator.Deploy.0 = Release|iPhoneSimulator
 		{796063F1-D05F-4143-B5AE-07DA3774A97A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{796063F1-D05F-4143-B5AE-07DA3774A97A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{796063F1-D05F-4143-B5AE-07DA3774A97A}.Debug|Any CPU.Deploy.0 = Debug|Any CPU

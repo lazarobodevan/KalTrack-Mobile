@@ -11,19 +11,16 @@ namespace KalTrack.ViewModel {
         public HomePageVM() {
             NavBack = new Command(Nav_Back);
             NavFourth = new Command(Nav_Fourth);
-            NavHome = new Command(Nav_Home);
-            NavChart = new Command(Nav_Chart);
-            NavCalendar = new Command(Nav_Calendar);
-            NavOptions = new Command(Nav_Options);
             GetListOfFood();
+            Visibility = new Command(HandleFABOpenClose);
         }
         public ICommand NavBack { get; }
         public ICommand NavFourth { get; }
-        public ICommand NavHome { get; }
-        public ICommand NavChart { get; }
-        public ICommand NavCalendar { get; }
-        public ICommand NavOptions { get; }
+
         public List<Food> Foods { get; private set; }
+
+        public ICommand Visibility { get; }
+
 
         string monthText = DateTime.UtcNow.ToString("MMMM/yyyy");
 
@@ -46,25 +43,33 @@ namespace KalTrack.ViewModel {
             }
         }
 
+        bool isOpen = false;
+        public bool IsOpen {
+            get => isOpen;
+            set {
+                isOpen = value;
+                OnPropertyChanged();
+            }
+        }
+
+        int motion = 0;
+        public int Motion {
+            get => motion;
+            set {
+                motion = value;
+                OnPropertyChanged();
+            }
+        }
+
+
+      
+
         void Nav_Back() {
             MonthText = DateTime.Parse(MonthText).AddMonths(-1).ToString("MMMM/yyyy");
         }
 
         void Nav_Fourth() {
             MonthText = DateTime.Parse(MonthText).AddMonths(1).ToString("MMMM/yyyy");
-        }
-
-        void Nav_Home() {
-            lblTxt = "Home";
-        }
-        void Nav_Chart() {
-            lblTxt = "Chart";
-        }
-        void Nav_Calendar() {
-            lblTxt = "Calendar";
-        }
-        void Nav_Options() {
-            lblTxt = "Options";
         }
 
 
@@ -76,6 +81,16 @@ namespace KalTrack.ViewModel {
             Foods.Add(new Food { Id = 1, Calories = 30, MealType = MealType.Breakfast.value });
 
             return Foods;
+        }
+
+
+        void HandleFABOpenClose() {
+            if (IsOpen==false) {
+                IsOpen = true;
+
+            } else {
+                IsOpen = false;
+            }
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using KalTrack.ViewModel;
+using Refractored.FabControl;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,7 +14,27 @@ namespace KalTrack.View {
     public partial class HomePage : ContentPage {
 
         public HomePage() {
-            InitializeComponent();            
+
+            InitializeComponent();
+
+            /*
+            FabClicked += OnFabClicked;
+            
+            FABAdd.Clicked = (sender, args) => {
+                //Raising the event here and passing sender and event arguments on
+                FabClicked(sender, args);
+            };
+            */
         }
+
+        /*
+        private event EventHandler FabClicked = delegate { };
+
+        private async void OnFabClicked(object sender, EventArgs args) {
+            if (!FABAdd.IsVisible)
+                await ((FloatingActionButtonView)sender).ScaleTo(1, 50, Easing.Linear);
+        }
+
+        */
     }
 }
